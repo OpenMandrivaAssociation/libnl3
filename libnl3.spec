@@ -14,8 +14,10 @@ Patch0:		libnl-3.2.3-avoid-version.diff
 Patch1:		libnl-3.2.3-tooooo_many_commas_fix.diff
 Patch2:		libnl-3.2.3-avoid-dangling-co_major_cache-reference-to-NL_AUTO_P.diff
 BuildRequires:	automake autoconf libtool
+BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
+BuildRequires:	graphviz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
