@@ -11,8 +11,11 @@ Group:		System/Libraries
 URL:		http://people.suug.ch/~tgr/libnl/
 Source0:	http://people.suug.ch/~tgr/libnl/files/libnl-%{version}.tar.gz
 Patch0:		libnl-3.2.3-avoid-version.diff
+Patch1:		libnl-3.2.3-tooooo_many_commas_fix.diff
+Patch2:		libnl-3.2.3-avoid-dangling-co_major_cache-reference-to-NL_AUTO_P.diff
 BuildRequires:	automake autoconf libtool
 BuildRequires:	doxygen
+BuildRequires:	flex
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -53,6 +56,8 @@ various netlink family specific interfaces.
 
 %setup -q -n libnl-%{version}
 %patch0 -p0
+%patch1 -p1
+%patch2 -p0
 
 # a quick hack to make doxygen stripping builddir from html outputs.
 sed -i.org -e "s,^STRIP_FROM_PATH.*,STRIP_FROM_PATH = `pwd`," doc/Doxyfile.in
