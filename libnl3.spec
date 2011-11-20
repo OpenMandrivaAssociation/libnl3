@@ -1,6 +1,6 @@
 %define	major 3
-%define	libname %mklibname nl %{major}
-%define	develname %mklibname -d nl 3
+%define	libname %mklibname nl _%{major}
+%define	develname %mklibname -d nl _%{major}
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
