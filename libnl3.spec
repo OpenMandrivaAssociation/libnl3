@@ -10,7 +10,7 @@ License:	LGPL
 Group:		System/Libraries
 URL:		http://people.suug.ch/~tgr/libnl/
 Source0:	http://people.suug.ch/~tgr/libnl/files/libnl-%{version}.tar.gz
-Patch0:		libnl-3.2.3-avoid-version.diff
+Patch0:		libnl-3.2.3-tooooo_many_commas_fix.diff
 BuildRequires:	automake autoconf libtool
 BuildRequires:	bison
 BuildRequires:	doxygen
@@ -54,7 +54,7 @@ various netlink family specific interfaces.
 %prep
 
 %setup -q -n libnl-%{version}
-%patch1 -p1
+%patch0 -p1
 
 # a quick hack to make doxygen stripping builddir from html outputs.
 sed -i.org -e "s,^STRIP_FROM_PATH.*,STRIP_FROM_PATH = `pwd`," doc/Doxyfile.in
