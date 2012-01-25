@@ -4,7 +4,7 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.6
+Version:	3.2.7
 Release:	1
 License:	LGPL
 Group:		System/Libraries
