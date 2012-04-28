@@ -4,7 +4,7 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.7
+Version:	3.2.8
 Release:	1
 License:	LGPL
 Group:		System/Libraries
@@ -75,7 +75,9 @@ rm -f %{buildroot}%{_libdir}/libnl/cli/cls/*.*a
 
 %files -n libnl3-tools
 %{_sbindir}/nl-*
+%{_sbindir}/genl-ctrl-list
 %{_mandir}/man8/*
+
 
 %files -n %{libname}
 %dir %{_sysconfdir}/libnl
@@ -96,6 +98,8 @@ rm -f %{buildroot}%{_libdir}/libnl/cli/cls/*.*a
 %{_libdir}/libnl/cli/qdisc/bfifo.so
 %{_libdir}/libnl/cli/cls/basic.so
 %{_libdir}/libnl/cli/cls/cgroup.so
+%{_libdir}/libnl/cli/qdisc/plug.so
+
 
 %files -n %{develname}
 %dir %{_includedir}/libnl3
