@@ -4,7 +4,7 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.8
+Version:	3.2.9
 Release:	1
 License:	LGPL
 Group:		System/Libraries
@@ -69,7 +69,7 @@ autoreconf -fi
 %makeinstall_std
 
 # clenuo
-rm -f %{buildroot}%{_libdir}/*.*a
+rm -f %{buildroot}%{_libdir}/*.la
 rm -f %{buildroot}%{_libdir}/libnl/cli/qdisc/*.*a
 rm -f %{buildroot}%{_libdir}/libnl/cli/cls/*.*a
 
