@@ -1,0 +1,531 @@
+diff -Naurp libnl-3.2.3/include/linux/genetlink.h libnl-3.2.3.oden/include/linux/genetlink.h
+--- libnl-3.2.3/include/linux/genetlink.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/genetlink.h	2011-11-20 14:25:40.175332601 +0100
+@@ -43,7 +43,7 @@ enum {
+ 	CTRL_CMD_NEWMCAST_GRP,
+ 	CTRL_CMD_DELMCAST_GRP,
+ 	CTRL_CMD_GETMCAST_GRP, /* unused */
+-	__CTRL_CMD_MAX,
++	__CTRL_CMD_MAX
+ };
+ 
+ #define CTRL_CMD_MAX (__CTRL_CMD_MAX - 1)
+@@ -57,7 +57,7 @@ enum {
+ 	CTRL_ATTR_MAXATTR,
+ 	CTRL_ATTR_OPS,
+ 	CTRL_ATTR_MCAST_GROUPS,
+-	__CTRL_ATTR_MAX,
++	__CTRL_ATTR_MAX
+ };
+ 
+ #define CTRL_ATTR_MAX (__CTRL_ATTR_MAX - 1)
+@@ -66,7 +66,7 @@ enum {
+ 	CTRL_ATTR_OP_UNSPEC,
+ 	CTRL_ATTR_OP_ID,
+ 	CTRL_ATTR_OP_FLAGS,
+-	__CTRL_ATTR_OP_MAX,
++	__CTRL_ATTR_OP_MAX
+ };
+ 
+ #define CTRL_ATTR_OP_MAX (__CTRL_ATTR_OP_MAX - 1)
+@@ -75,7 +75,7 @@ enum {
+ 	CTRL_ATTR_MCAST_GRP_UNSPEC,
+ 	CTRL_ATTR_MCAST_GRP_NAME,
+ 	CTRL_ATTR_MCAST_GRP_ID,
+-	__CTRL_ATTR_MCAST_GRP_MAX,
++	__CTRL_ATTR_MCAST_GRP_MAX
+ };
+ 
+ #define CTRL_ATTR_MCAST_GRP_MAX (__CTRL_ATTR_MCAST_GRP_MAX - 1)
+diff -Naurp libnl-3.2.3/include/linux/gen_stats.h libnl-3.2.3.oden/include/linux/gen_stats.h
+--- libnl-3.2.3/include/linux/gen_stats.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/gen_stats.h	2011-11-20 14:25:17.802692360 +0100
+@@ -9,7 +9,7 @@ enum {
+ 	TCA_STATS_RATE_EST,
+ 	TCA_STATS_QUEUE,
+ 	TCA_STATS_APP,
+-	__TCA_STATS_MAX,
++	__TCA_STATS_MAX
+ };
+ #define TCA_STATS_MAX (__TCA_STATS_MAX - 1)
+ 
+diff -Naurp libnl-3.2.3/include/linux/if_addr.h libnl-3.2.3.oden/include/linux/if_addr.h
+--- libnl-3.2.3/include/linux/if_addr.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/if_addr.h	2011-11-20 14:26:03.023968030 +0100
+@@ -28,7 +28,7 @@ enum {
+ 	IFA_ANYCAST,
+ 	IFA_CACHEINFO,
+ 	IFA_MULTICAST,
+-	__IFA_MAX,
++	__IFA_MAX
+ };
+ 
+ #define IFA_MAX (__IFA_MAX - 1)
+diff -Naurp libnl-3.2.3/include/linux/if.h libnl-3.2.3.oden/include/linux/if.h
+--- libnl-3.2.3/include/linux/if.h	2011-09-09 10:31:35.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/if.h	2011-11-20 14:25:52.290138943 +0100
+@@ -108,13 +108,13 @@ enum {
+ 	IF_OPER_LOWERLAYERDOWN,
+ 	IF_OPER_TESTING,
+ 	IF_OPER_DORMANT,
+-	IF_OPER_UP,
++	IF_OPER_UP
+ };
+ 
+ /* link modes */
+ enum {
+ 	IF_LINK_MODE_DEFAULT,
+-	IF_LINK_MODE_DORMANT,	/* limit upward transition to dormant */
++	IF_LINK_MODE_DORMANT	/* limit upward transition to dormant */
+ };
+ 
+ /*
+diff -Naurp libnl-3.2.3/include/linux/if_link.h libnl-3.2.3.oden/include/linux/if_link.h
+--- libnl-3.2.3/include/linux/if_link.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/if_link.h	2011-11-20 14:27:07.412955932 +0100
+@@ -146,7 +146,7 @@ enum {
+ enum {
+ 	IFLA_INET_UNSPEC,
+ 	IFLA_INET_CONF,
+-	__IFLA_INET_MAX,
++	__IFLA_INET_MAX
+ };
+ 
+ #define IFLA_INET_MAX (__IFLA_INET_MAX - 1)
+@@ -206,7 +206,7 @@ enum {
+ 	IFLA_INFO_KIND,
+ 	IFLA_INFO_DATA,
+ 	IFLA_INFO_XSTATS,
+-	__IFLA_INFO_MAX,
++	__IFLA_INFO_MAX
+ };
+ 
+ #define IFLA_INFO_MAX	(__IFLA_INFO_MAX - 1)
+@@ -219,7 +219,7 @@ enum {
+ 	IFLA_VLAN_FLAGS,
+ 	IFLA_VLAN_EGRESS_QOS,
+ 	IFLA_VLAN_INGRESS_QOS,
+-	__IFLA_VLAN_MAX,
++	__IFLA_VLAN_MAX
+ };
+ 
+ #define IFLA_VLAN_MAX	(__IFLA_VLAN_MAX - 1)
+@@ -246,7 +246,7 @@ struct ifla_vlan_qos_mapping {
+ enum {
+ 	IFLA_MACVLAN_UNSPEC,
+ 	IFLA_MACVLAN_MODE,
+-	__IFLA_MACVLAN_MAX,
++	__IFLA_MACVLAN_MAX
+ };
+ 
+ #define IFLA_MACVLAN_MAX (__IFLA_MACVLAN_MAX - 1)
+@@ -263,7 +263,7 @@ enum macvlan_mode {
+ enum {
+ 	IFLA_VF_INFO_UNSPEC,
+ 	IFLA_VF_INFO,
+-	__IFLA_VF_INFO_MAX,
++	__IFLA_VF_INFO_MAX
+ };
+ 
+ #define IFLA_VF_INFO_MAX (__IFLA_VF_INFO_MAX - 1)
+@@ -273,7 +273,7 @@ enum {
+ 	IFLA_VF_MAC,		/* Hardware queue specific attributes */
+ 	IFLA_VF_VLAN,
+ 	IFLA_VF_TX_RATE,	/* TX Bandwidth Allocation */
+-	__IFLA_VF_MAX,
++	__IFLA_VF_MAX
+ };
+ 
+ #define IFLA_VF_MAX (__IFLA_VF_MAX - 1)
+@@ -320,7 +320,7 @@ struct ifla_vf_info {
+ enum {
+ 	IFLA_VF_PORT_UNSPEC,
+ 	IFLA_VF_PORT,			/* nest */
+-	__IFLA_VF_PORT_MAX,
++	__IFLA_VF_PORT_MAX
+ };
+ 
+ #define IFLA_VF_PORT_MAX (__IFLA_VF_PORT_MAX - 1)
+@@ -334,7 +334,7 @@ enum {
+ 	IFLA_PORT_HOST_UUID,		/* binary UUID */
+ 	IFLA_PORT_REQUEST,		/* __u8 */
+ 	IFLA_PORT_RESPONSE,		/* __u16, output only */
+-	__IFLA_PORT_MAX,
++	__IFLA_PORT_MAX
+ };
+ 
+ #define IFLA_PORT_MAX (__IFLA_PORT_MAX - 1)
+@@ -347,7 +347,7 @@ enum {
+ 	PORT_REQUEST_PREASSOCIATE = 0,
+ 	PORT_REQUEST_PREASSOCIATE_RR,
+ 	PORT_REQUEST_ASSOCIATE,
+-	PORT_REQUEST_DISASSOCIATE,
++	PORT_REQUEST_DISASSOCIATE
+ };
+ 
+ enum {
+@@ -364,7 +364,7 @@ enum {
+ 	PORT_PROFILE_RESPONSE_INVALID,
+ 	PORT_PROFILE_RESPONSE_BADSTATE,
+ 	PORT_PROFILE_RESPONSE_INSUFFICIENT_RESOURCES,
+-	PORT_PROFILE_RESPONSE_ERROR,
++	PORT_PROFILE_RESPONSE_ERROR
+ };
+ 
+ struct ifla_port_vsi {
+diff -Naurp libnl-3.2.3/include/linux/netfilter/nfnetlink.h libnl-3.2.3.oden/include/linux/netfilter/nfnetlink.h
+--- libnl-3.2.3/include/linux/netfilter/nfnetlink.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/netfilter/nfnetlink.h	2011-11-20 14:31:23.336150242 +0100
+@@ -27,7 +27,7 @@ enum nfnetlink_groups {
+ #define NFNLGRP_CONNTRACK_EXP_UPDATE	NFNLGRP_CONNTRACK_EXP_UPDATE
+ 	NFNLGRP_CONNTRACK_EXP_DESTROY,
+ #define NFNLGRP_CONNTRACK_EXP_DESTROY	NFNLGRP_CONNTRACK_EXP_DESTROY
+-	__NFNLGRP_MAX,
++	__NFNLGRP_MAX
+ };
+ #define NFNLGRP_MAX	(__NFNLGRP_MAX - 1)
+ 
+diff -Naurp libnl-3.2.3/include/linux/netfilter/nfnetlink_log.h libnl-3.2.3.oden/include/linux/netfilter/nfnetlink_log.h
+--- libnl-3.2.3/include/linux/netfilter/nfnetlink_log.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/netfilter/nfnetlink_log.h	2011-11-20 14:32:02.436598443 +0100
+@@ -62,7 +62,7 @@ enum nfulnl_msg_config_cmds {
+ 	NFULNL_CFG_CMD_BIND,
+ 	NFULNL_CFG_CMD_UNBIND,
+ 	NFULNL_CFG_CMD_PF_BIND,
+-	NFULNL_CFG_CMD_PF_UNBIND,
++	NFULNL_CFG_CMD_PF_UNBIND
+ };
+ 
+ struct nfulnl_msg_config_cmd {
+diff -Naurp libnl-3.2.3/include/linux/netfilter/nfnetlink_queue.h libnl-3.2.3.oden/include/linux/netfilter/nfnetlink_queue.h
+--- libnl-3.2.3/include/linux/netfilter/nfnetlink_queue.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/netfilter/nfnetlink_queue.h	2011-11-20 14:32:25.217280517 +0100
+@@ -61,7 +61,7 @@ enum nfqnl_msg_config_cmds {
+ 	NFQNL_CFG_CMD_BIND,
+ 	NFQNL_CFG_CMD_UNBIND,
+ 	NFQNL_CFG_CMD_PF_BIND,
+-	NFQNL_CFG_CMD_PF_UNBIND,
++	NFQNL_CFG_CMD_PF_UNBIND
+ };
+ 
+ struct nfqnl_msg_config_cmd {
+@@ -73,7 +73,7 @@ struct nfqnl_msg_config_cmd {
+ enum nfqnl_config_mode {
+ 	NFQNL_COPY_NONE,
+ 	NFQNL_COPY_META,
+-	NFQNL_COPY_PACKET,
++	NFQNL_COPY_PACKET
+ };
+ 
+ struct nfqnl_msg_config_params {
+diff -Naurp libnl-3.2.3/include/linux/netfilter.h libnl-3.2.3.oden/include/linux/netfilter.h
+--- libnl-3.2.3/include/linux/netfilter.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/netfilter.h	2011-11-20 14:27:45.936361075 +0100
+@@ -43,7 +43,7 @@ enum {
+ 	NFPROTO_BRIDGE =  7,
+ 	NFPROTO_IPV6   = 10,
+ 	NFPROTO_DECNET = 12,
+-	NFPROTO_NUMPROTO,
++	NFPROTO_NUMPROTO
+ };
+ 
+ union nf_inet_addr {
+diff -Naurp libnl-3.2.3/include/linux/netlink.h libnl-3.2.3.oden/include/linux/netlink.h
+--- libnl-3.2.3/include/linux/netlink.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/netlink.h	2011-11-20 14:28:05.132067634 +0100
+@@ -111,7 +111,7 @@ struct nl_pktinfo {
+ 
+ enum {
+ 	NETLINK_UNCONNECTED = 0,
+-	NETLINK_CONNECTED,
++	NETLINK_CONNECTED
+ };
+ 
+ /*
+diff -Naurp libnl-3.2.3/include/linux/pkt_cls.h libnl-3.2.3.oden/include/linux/pkt_cls.h
+--- libnl-3.2.3/include/linux/pkt_cls.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/pkt_cls.h	2011-11-20 14:28:50.073388233 +0100
+@@ -333,14 +333,14 @@ enum {
+ 	FLOW_KEY_SKGID,
+ 	FLOW_KEY_VLAN_TAG,
+ 	FLOW_KEY_RXHASH,
+-	__FLOW_KEY_MAX,
++	__FLOW_KEY_MAX
+ };
+ 
+ #define FLOW_KEY_MAX	(__FLOW_KEY_MAX - 1)
+ 
+ enum {
+ 	FLOW_MODE_MAP,
+-	FLOW_MODE_HASH,
++	FLOW_MODE_HASH
+ };
+ 
+ enum {
+@@ -383,7 +383,7 @@ enum {
+ 	TCA_CGROUP_ACT,
+ 	TCA_CGROUP_POLICE,
+ 	TCA_CGROUP_EMATCHES,
+-	__TCA_CGROUP_MAX,
++	__TCA_CGROUP_MAX
+ };
+ 
+ #define TCA_CGROUP_MAX (__TCA_CGROUP_MAX - 1)
+diff -Naurp libnl-3.2.3/include/linux/pkt_sched.h libnl-3.2.3.oden/include/linux/pkt_sched.h
+--- libnl-3.2.3/include/linux/pkt_sched.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/linux/pkt_sched.h	2011-11-20 14:30:07.611240890 +0100
+@@ -142,7 +142,7 @@ enum {
+ 	TCA_TBF_PARMS,
+ 	TCA_TBF_RTAB,
+ 	TCA_TBF_PTAB,
+-	__TCA_TBF_MAX,
++	__TCA_TBF_MAX
+ };
+ 
+ #define TCA_TBF_MAX (__TCA_TBF_MAX - 1)
+@@ -181,7 +181,7 @@ enum {
+ 	TCA_RED_UNSPEC,
+ 	TCA_RED_PARMS,
+ 	TCA_RED_STAB,
+-	__TCA_RED_MAX,
++	__TCA_RED_MAX
+ };
+ 
+ #define TCA_RED_MAX (__TCA_RED_MAX - 1)
+@@ -214,7 +214,7 @@ enum {
+        TCA_GRED_PARMS,
+        TCA_GRED_STAB,
+        TCA_GRED_DPS,
+-	   __TCA_GRED_MAX,
++	   __TCA_GRED_MAX
+ };
+ 
+ #define TCA_GRED_MAX (__TCA_GRED_MAX - 1)
+@@ -253,7 +253,7 @@ enum {
+ 	TCA_CHOKE_UNSPEC,
+ 	TCA_CHOKE_PARMS,
+ 	TCA_CHOKE_STAB,
+-	__TCA_CHOKE_MAX,
++	__TCA_CHOKE_MAX
+ };
+ 
+ #define TCA_CHOKE_MAX (__TCA_CHOKE_MAX - 1)
+@@ -305,7 +305,7 @@ enum {
+ 	TCA_HTB_INIT,
+ 	TCA_HTB_CTAB,
+ 	TCA_HTB_RTAB,
+-	__TCA_HTB_MAX,
++	__TCA_HTB_MAX
+ };
+ 
+ #define TCA_HTB_MAX (__TCA_HTB_MAX - 1)
+@@ -342,7 +342,7 @@ enum {
+ 	TCA_HFSC_RSC,
+ 	TCA_HFSC_FSC,
+ 	TCA_HFSC_USC,
+-	__TCA_HFSC_MAX,
++	__TCA_HFSC_MAX
+ };
+ 
+ #define TCA_HFSC_MAX (__TCA_HFSC_MAX - 1)
+@@ -422,7 +422,7 @@ enum {
+ 	TCA_CBQ_RATE,
+ 	TCA_CBQ_RTAB,
+ 	TCA_CBQ_POLICE,
+-	__TCA_CBQ_MAX,
++	__TCA_CBQ_MAX
+ };
+ 
+ #define TCA_CBQ_MAX	(__TCA_CBQ_MAX - 1)
+@@ -436,7 +436,7 @@ enum {
+ 	TCA_DSMARK_SET_TC_INDEX,
+ 	TCA_DSMARK_MASK,
+ 	TCA_DSMARK_VALUE,
+-	__TCA_DSMARK_MAX,
++	__TCA_DSMARK_MAX
+ };
+ 
+ #define TCA_DSMARK_MAX (__TCA_DSMARK_MAX - 1)
+@@ -451,7 +451,7 @@ enum {
+ 	TCA_ATM_EXCESS,		/* excess traffic class (0 for CLP)  */
+ 	TCA_ATM_ADDR,		/* PVC address (for output only) */
+ 	TCA_ATM_STATE,		/* VC state (ATM_VS_*; for output only) */
+-	__TCA_ATM_MAX,
++	__TCA_ATM_MAX
+ };
+ 
+ #define TCA_ATM_MAX	(__TCA_ATM_MAX - 1)
+@@ -465,7 +465,7 @@ enum {
+ 	TCA_NETEM_REORDER,
+ 	TCA_NETEM_CORRUPT,
+ 	TCA_NETEM_LOSS,
+-	__TCA_NETEM_MAX,
++	__TCA_NETEM_MAX
+ };
+ 
+ #define TCA_NETEM_MAX (__TCA_NETEM_MAX - 1)
+@@ -554,7 +554,7 @@ struct tc_mqprio_qopt {
+ enum {
+ 	TCA_SFB_UNSPEC,
+ 	TCA_SFB_PARMS,
+-	__TCA_SFB_MAX,
++	__TCA_SFB_MAX
+ };
+ 
+ #define TCA_SFB_MAX (__TCA_SFB_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/attr.h libnl-3.2.3.oden/include/netlink/attr.h
+--- libnl-3.2.3/include/netlink/attr.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/attr.h	2011-11-20 14:19:14.700628613 +0100
+@@ -44,7 +44,7 @@ enum {
+ 	NLA_FLAG,	/**< Flag */
+ 	NLA_MSECS,	/**< Micro seconds (64bit) */
+ 	NLA_NESTED,	/**< Nested attributes */
+-	__NLA_TYPE_MAX,
++	__NLA_TYPE_MAX
+ };
+ 
+ #define NLA_TYPE_MAX (__NLA_TYPE_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/cache-api.h libnl-3.2.3.oden/include/netlink/cache-api.h
+--- libnl-3.2.3/include/netlink/cache-api.h	2011-10-11 15:35:59.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/cache-api.h	2011-11-20 14:19:29.636827598 +0100
+@@ -115,7 +115,7 @@ enum {
+ 	NL_ACT_GET,
+ 	NL_ACT_SET,
+ 	NL_ACT_CHANGE,
+-	__NL_ACT_MAX,
++	__NL_ACT_MAX
+ };
+ 
+ #define NL_ACT_MAX (__NL_ACT_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/handlers.h libnl-3.2.3.oden/include/netlink/handlers.h
+--- libnl-3.2.3/include/netlink/handlers.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/handlers.h	2011-11-20 14:20:06.679321565 +0100
+@@ -62,7 +62,7 @@ enum nl_cb_action {
+ 	/** Skip this message */
+ 	NL_SKIP,
+ 	/** Stop parsing altogether and discard remaining messages */
+-	NL_STOP,
++	NL_STOP
+ };
+ 
+ /**
+@@ -78,7 +78,7 @@ enum nl_cb_kind {
+ 	NL_CB_DEBUG,
+ 	/** Customized handler specified by the user */
+ 	NL_CB_CUSTOM,
+-	__NL_CB_KIND_MAX,
++	__NL_CB_KIND_MAX
+ };
+ 
+ #define NL_CB_KIND_MAX (__NL_CB_KIND_MAX - 1)
+@@ -110,7 +110,7 @@ enum nl_cb_type {
+ 	NL_CB_SEND_ACK,
+ 	/** Flag NLM_F_DUMP_INTR is set in message */
+ 	NL_CB_DUMP_INTR,
+-	__NL_CB_TYPE_MAX,
++	__NL_CB_TYPE_MAX
+ };
+ 
+ #define NL_CB_TYPE_MAX (__NL_CB_TYPE_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/netfilter/log.h libnl-3.2.3.oden/include/netlink/netfilter/log.h
+--- libnl-3.2.3/include/netlink/netfilter/log.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/netfilter/log.h	2011-11-20 14:18:30.516040619 +0100
+@@ -30,12 +30,12 @@ extern struct nl_object_ops log_obj_ops;
+ enum nfnl_log_copy_mode {
+ 	NFNL_LOG_COPY_NONE,
+ 	NFNL_LOG_COPY_META,
+-	NFNL_LOG_COPY_PACKET,
++	NFNL_LOG_COPY_PACKET
+ };
+ 
+ enum nfnl_log_flags {
+ 	NFNL_LOG_FLAG_SEQ		= 0x1,
+-	NFNL_LOG_FLAG_SEQ_GLOBAL	= 0x2,
++	NFNL_LOG_FLAG_SEQ_GLOBAL	= 0x2
+ };
+ 
+ /* General */
+diff -Naurp libnl-3.2.3/include/netlink/netfilter/queue.h libnl-3.2.3.oden/include/netlink/netfilter/queue.h
+--- libnl-3.2.3/include/netlink/netfilter/queue.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/netfilter/queue.h	2011-11-20 14:18:50.918312005 +0100
+@@ -27,7 +27,7 @@ extern struct nl_object_ops queue_obj_op
+ enum nfnl_queue_copy_mode {
+ 	NFNL_QUEUE_COPY_NONE,
+ 	NFNL_QUEUE_COPY_META,
+-	NFNL_QUEUE_COPY_PACKET,
++	NFNL_QUEUE_COPY_PACKET
+ };
+ 
+ /* General */
+diff -Naurp libnl-3.2.3/include/netlink/route/link.h libnl-3.2.3.oden/include/netlink/route/link.h
+--- libnl-3.2.3/include/netlink/route/link.h	2011-11-07 12:30:52.000000000 +0100
++++ libnl-3.2.3.oden/include/netlink/route/link.h	2011-11-20 14:22:53.980560827 +0100
+@@ -92,7 +92,7 @@ typedef enum {
+ 	RTNL_LINK_ICMP6_INERRORS,	/*!< ICMPv6 SNMP InErrors */
+ 	RTNL_LINK_ICMP6_OUTMSGS,	/*!< ICMPv6 SNMP OutMsgs */
+ 	RTNL_LINK_ICMP6_OUTERRORS,	/*!< ICMPv6 SNMP OutErrors */
+-	__RTNL_LINK_STATS_MAX,
++	__RTNL_LINK_STATS_MAX
+ } rtnl_link_stat_id_t;
+ 
+ #define RTNL_LINK_STATS_MAX (__RTNL_LINK_STATS_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/route/nexthop.h libnl-3.2.3.oden/include/netlink/route/nexthop.h
+--- libnl-3.2.3/include/netlink/route/nexthop.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/route/nexthop.h	2011-11-20 14:23:12.193763949 +0100
+@@ -24,7 +24,7 @@ struct rtnl_nexthop;
+ enum {
+ 	NH_DUMP_FROM_ONELINE = -2,
+ 	NH_DUMP_FROM_DETAILS = -1,
+-	NH_DUMP_FROM_ENV = 0,
++	NH_DUMP_FROM_ENV = 0
+ 	/* > 0 reserved for nexthop index */
+ };
+ 
+diff -Naurp libnl-3.2.3/include/netlink/route/tc-api.h libnl-3.2.3.oden/include/netlink/route/tc-api.h
+--- libnl-3.2.3/include/netlink/route/tc-api.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/route/tc-api.h	2011-11-20 14:23:44.642220298 +0100
+@@ -24,7 +24,7 @@ enum rtnl_tc_type {
+ 	RTNL_TC_TYPE_QDISC,
+ 	RTNL_TC_TYPE_CLASS,
+ 	RTNL_TC_TYPE_CLS,
+-	__RTNL_TC_TYPE_MAX,
++	__RTNL_TC_TYPE_MAX
+ };
+ 
+ #define RTNL_TC_TYPE_MAX (__RTNL_TC_TYPE_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/route/tc.h libnl-3.2.3.oden/include/netlink/route/tc.h
+--- libnl-3.2.3/include/netlink/route/tc.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/route/tc.h	2011-11-20 14:23:55.092046486 +0100
+@@ -63,7 +63,7 @@ enum rtnl_tc_stat {
+ 	RTNL_TC_DROPS,		/**< Total number of packets dropped */
+ 	RTNL_TC_REQUEUES,	/**< Total number of requeues */
+ 	RTNL_TC_OVERLIMITS,	/**< Total number of overlimits */
+-	__RTNL_TC_STATS_MAX,
++	__RTNL_TC_STATS_MAX
+ };
+ 
+ #define RTNL_TC_STATS_MAX (__RTNL_TC_STATS_MAX - 1)
+diff -Naurp libnl-3.2.3/include/netlink/types.h libnl-3.2.3.oden/include/netlink/types.h
+--- libnl-3.2.3/include/netlink/types.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/types.h	2011-11-20 14:21:05.384105775 +0100
+@@ -22,7 +22,7 @@ enum nl_dump_type {
+ 	NL_DUMP_LINE,		/**< Dump object briefly on one line */
+ 	NL_DUMP_DETAILS,	/**< Dump all attributes but no statistics */
+ 	NL_DUMP_STATS,		/**< Dump all attributes including statistics */
+-	__NL_DUMP_MAX,
++	__NL_DUMP_MAX
+ };
+ #define NL_DUMP_MAX (__NL_DUMP_MAX - 1)
+ 
+diff -Naurp libnl-3.2.3/include/netlink/utils.h libnl-3.2.3.oden/include/netlink/utils.h
+--- libnl-3.2.3/include/netlink/utils.h	2011-08-16 16:16:01.000000000 +0200
++++ libnl-3.2.3.oden/include/netlink/utils.h	2011-11-20 14:21:16.622256093 +0100
+@@ -40,7 +40,7 @@ extern "C" {
+ 
+ enum {
+ 	NL_BYTE_RATE,
+-	NL_BIT_RATE,
++	NL_BIT_RATE
+ };
+ 
+ /* unit pretty-printing */
