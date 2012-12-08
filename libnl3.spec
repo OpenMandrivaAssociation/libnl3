@@ -4,7 +4,7 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.12
+Version:	3.2.14
 Release:	1
 License:	LGPL
 Group:		System/Libraries
@@ -54,10 +54,10 @@ various netlink family specific interfaces.
 %prep
 
 %setup -q -n libnl-%{version}
-%patch0 -p1
+#% patch0 -p1
 
 # a quick hack to make doxygen stripping builddir from html outputs.
-sed -i.org -e "s,^STRIP_FROM_PATH.*,STRIP_FROM_PATH = `pwd`," doc/Doxyfile.in
+#sed -i.org -e "s,^STRIP_FROM_PATH.*,STRIP_FROM_PATH = `pwd`," doc/Doxyfile.in
 
 %build
 autoreconf -fi
