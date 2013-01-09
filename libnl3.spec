@@ -5,13 +5,15 @@
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
 Version:	3.2.18
-Release:	1
+Release:	2
 License:	LGPL
 Group:		System/Libraries
 URL:		http://people.suug.ch/~tgr/libnl/
 Source0:	http://people.suug.ch/~tgr/libnl/files/libnl-%{version}.tar.gz
 Patch0:		libnl-3.2.3-tooooo_many_commas_fix.diff
-BuildRequires:	automake autoconf libtool
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
 BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
