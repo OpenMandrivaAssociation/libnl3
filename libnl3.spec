@@ -4,12 +4,12 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.21
+Version:	3.2.22
 Release:	1
 License:	LGPL
 Group:		System/Libraries
-URL:		http://people.suug.ch/~tgr/libnl/
-Source0:	http://people.suug.ch/~tgr/libnl/files/libnl-%{version}.tar.gz
+URL:		http://www.carisma.slowglass.com/~tgr/libnl/
+Source0:	http://www.carisma.slowglass.com/~tgr/libnl/files/libnl-%{version}.tar.gz
 Patch0:		libnl-3.2.3-tooooo_many_commas_fix.diff
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -18,6 +18,13 @@ BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
 BuildRequires:	graphviz
+
+%track
+prog %name = {
+	url = http://www.carisma.slowglass.com/~tgr/libnl/
+	regex = "Version (__VER__) has been released"
+	version = %version
+}
 
 %description
 libnl is a library for applications dealing with netlink sockets.
