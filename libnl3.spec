@@ -48,7 +48,6 @@ various netlink family specific interfaces.
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Obsoletes:	%{_lib}nl_3 < 3.2.22-2
-Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
 %description -n	%{libname}
 This package contains a shared library for %{name}.
