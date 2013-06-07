@@ -115,11 +115,6 @@ autoreconf -fi
 %install
 %makeinstall_std
 
-# clenuo
-#rm -f %{buildroot}%{_libdir}/*.la
-#rm -f %{buildroot}%{_libdir}/libnl/cli/qdisc/*.*a
-#rm -f %{buildroot}%{_libdir}/libnl/cli/cls/*.*a
-
 %files -n libnl3-tools
 %dir %{_sysconfdir}/libnl
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/libnl/classid
