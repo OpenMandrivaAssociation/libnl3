@@ -10,7 +10,7 @@
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
 Version:	3.2.22
-Release:	4
+Release:	5
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.carisma.slowglass.com/~tgr/libnl/
