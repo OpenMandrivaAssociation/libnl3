@@ -1,16 +1,16 @@
-%define	api	3
-%define	major	200
+%define	api 3
+%define	major 200
 %define	libname %mklibname nl %{api} %{major}
-%define libcli	%mklibname nl-cli %{api} %{major}
-%define libgenl	%mklibname nl-genl %{api} %{major}
-%define libnf	%mklibname nl-nf %{api} %{major}
+%define libcli %mklibname nl-cli %{api} %{major}
+%define libgenl %mklibname nl-genl %{api} %{major}
+%define libnf %mklibname nl-nf %{api} %{major}
 %define libroute %mklibname nl-route %{api} %{major}
 %define	devname %mklibname -d nl %{api}
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.22
-Release:	6
+Version:	3.2.24
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.carisma.slowglass.com/~tgr/libnl/
