@@ -5,6 +5,7 @@
 %define libgenl %mklibname nl-genl %{api} %{major}
 %define libnf %mklibname nl-nf %{api} %{major}
 %define libroute %mklibname nl-route %{api} %{major}
+%define libidiag %mklibname nl-idiag %{api} %{major}
 %define	devname %mklibname -d nl %{api}
 
 Summary:	Library for applications dealing with netlink sockets
@@ -84,6 +85,12 @@ Conflicts:	%{_lib}nl_3 < 3.2.22-2
 %description -n	%{libroute}
 This package contains a shared library for %{name}.
 
+%package -n %{libidiag}
+Summary:	Shared library for %{name}
+
+%description -n %{libidiag}
+Netlink Inet Diag Family Library.
+
 %package -n	%{devname}
 Summary:	Header files of libnl
 Group:		Development/C
@@ -133,6 +140,8 @@ autoreconf -fi
 %{_libdir}/libnl/cli/cls/basic.so
 %{_libdir}/libnl/cli/cls/cgroup.so
 %{_libdir}/libnl/cli/qdisc/plug.so
+%{_libdir}/libnl/cli/qdisc/fq_codel.so
+%{_libdir}/libnl/cli/qdisc/ingress.so
 
 %files -n %{libname}
 %{_libdir}/libnl-%{api}.so.%{major}*
@@ -149,6 +158,9 @@ autoreconf -fi
 %files -n %{libroute}
 %{_libdir}/libnl-route-%{api}.so.%{major}*
 
+%files -n %{libidiag}
+%{_libdir}/libnl-idiag-%{api}.so.%{major}*
+
 %files -n %{devname}
 %dir %{_includedir}/libnl3
 %dir %{_includedir}/libnl3/netlink
@@ -161,12 +173,16 @@ autoreconf -fi
 %dir %{_includedir}/libnl3/netlink/genl
 %dir %{_includedir}/libnl3/netlink/netfilter
 %dir %{_includedir}/libnl3/netlink/cli
+%dir %{_includedir}/libnl3/netlink/idiag
+%dir %{_includedir}/libnl3/netlink/route/act
 %{_includedir}/libnl3/netlink/*.h
+%{_includedir}//libnl3/netlink/idiag/*.h
 %{_includedir}/libnl3/netlink/fib_lookup/*.h
 %{_includedir}/libnl3/netlink/route/*.h
 %{_includedir}/libnl3/netlink/route/qdisc/*.h
 %{_includedir}/libnl3/netlink/route/link/*.h
 %{_includedir}/libnl3/netlink/route/cls/*.h
+%{_includedir}/libnl3/netlink/route/act/*.h
 %{_includedir}/libnl3/netlink/route/cls/ematch/*.h
 %{_includedir}/libnl3/netlink/genl/*.h
 %{_includedir}/libnl3/netlink/netfilter/*.h
@@ -176,6 +192,7 @@ autoreconf -fi
 %{_libdir}/libnl-%{api}.so
 %{_libdir}/libnl-nf-%{api}.so
 %{_libdir}/libnl-route-%{api}.so
+%{_libdir}/libnl-idiag-%{api}.so
 %{_libdir}/pkgconfig/libnl-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-cli-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-genl-%{api}.0.pc
