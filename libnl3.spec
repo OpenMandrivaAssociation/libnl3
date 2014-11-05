@@ -10,13 +10,12 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.24
-Release:	3
+Version:	3.2.25
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.carisma.slowglass.com/~tgr/libnl/
 Source0:	http://www.carisma.slowglass.com/~tgr/libnl/files/libnl-%{version}.tar.gz
-Patch0:		libnl-3.2.3-tooooo_many_commas_fix.diff
 BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
@@ -108,14 +107,10 @@ various netlink family specific interfaces.
 
 %prep
 %setup -qn libnl-%{version}
-#patch0 -p1
-
-# a quick hack to make doxygen stripping builddir from html outputs.
-#sed -i.org -e "s,^STRIP_FROM_PATH.*,STRIP_FROM_PATH = `pwd`," doc/Doxyfile.in
 autoreconf -fi
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 %make
 
