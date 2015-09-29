@@ -6,16 +6,17 @@
 %define libnf %mklibname nl-nf %{api} %{major}
 %define libroute %mklibname nl-route %{api} %{major}
 %define libidiag %mklibname nl-idiag %{api} %{major}
+%define libxfrm %mklibname nl-xfrm %{api} %{major}
 %define	devname %mklibname -d nl %{api}
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.2.25
-Release:	3
+Version:	3.2.26
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.carisma.slowglass.com/~tgr/libnl/
-Source0:	http://www.carisma.slowglass.com/~tgr/libnl/files/libnl-%{version}.tar.gz
+Url:		https://github.com/thom311/libnl
+Source0:	https://github.com/thom311/libnl/releases/download/libnl3_2_26/libnl-%{version}.tar.gz
 BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
@@ -90,6 +91,12 @@ Summary:	Shared library for %{name}
 %description -n %{libidiag}
 Netlink Inet Diag Family Library.
 
+%package -n %{libxfrm}
+Summary:	Shared library for %{name}
+
+%description -n %{libxfrm}
+Netlink Inet Diag Family Library.
+
 %package -n	%{devname}
 Summary:	Header files of libnl
 Group:		Development/C
@@ -121,8 +128,10 @@ autoreconf -fi
 %dir %{_sysconfdir}/libnl
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/libnl/classid
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/libnl/pktloc
-%{_sbindir}/nl-*
-%{_sbindir}/genl-ctrl-list
+%{_bindir}/nl-*
+%{_bindir}/nf-*
+%{_bindir}/genl-ctrl-list
+%{_bindir}/idiag-socket-details
 %{_mandir}/man8/*
 %dir %{_libdir}/libnl
 %dir %{_libdir}/libnl/cli
@@ -137,6 +146,7 @@ autoreconf -fi
 %{_libdir}/libnl/cli/qdisc/plug.so
 %{_libdir}/libnl/cli/qdisc/fq_codel.so
 %{_libdir}/libnl/cli/qdisc/ingress.so
+%{_libdir}/libnl/cli/qdisc/hfsc.so
 
 %files -n %{libname}
 %{_libdir}/libnl-%{api}.so.%{major}*
@@ -156,6 +166,9 @@ autoreconf -fi
 %files -n %{libidiag}
 %{_libdir}/libnl-idiag-%{api}.so.%{major}*
 
+%files -n %{libxfrm}
+%{_libdir}/libnl-xfrm-%{api}.so.%{major}*
+
 %files -n %{devname}
 %dir %{_includedir}/libnl3
 %dir %{_includedir}/libnl3/netlink
@@ -169,8 +182,10 @@ autoreconf -fi
 %dir %{_includedir}/libnl3/netlink/netfilter
 %dir %{_includedir}/libnl3/netlink/cli
 %dir %{_includedir}/libnl3/netlink/idiag
+%dir %{_includedir}/libnl3/netlink/xfrm
 %dir %{_includedir}/libnl3/netlink/route/act
 %{_includedir}/libnl3/netlink/*.h
+%{_includedir}/libnl3/netlink/xfrm/*.h
 %{_includedir}//libnl3/netlink/idiag/*.h
 %{_includedir}/libnl3/netlink/fib_lookup/*.h
 %{_includedir}/libnl3/netlink/route/*.h
@@ -188,9 +203,12 @@ autoreconf -fi
 %{_libdir}/libnl-nf-%{api}.so
 %{_libdir}/libnl-route-%{api}.so
 %{_libdir}/libnl-idiag-%{api}.so
+%{_libdir}/libnl-xfrm-%{api}.so
 %{_libdir}/pkgconfig/libnl-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-cli-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-genl-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-nf-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-route-%{api}.0.pc
+%{_libdir}/pkgconfig/libnl-idiag-%{api}.0.pc
+%{_libdir}/pkgconfig/libnl-xfrm-%{api}.0.pc
 
