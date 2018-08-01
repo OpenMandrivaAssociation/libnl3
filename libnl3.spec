@@ -11,8 +11,8 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.3.0
-Release:	2
+Version:	3.4.0
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://github.com/thom311/libnl
@@ -22,13 +22,6 @@ BuildRequires:	doxygen
 BuildRequires:	flex
 BuildRequires:	graphviz
 BuildRequires:	libtool
-
-%track
-prog %{name} = {
-	url = http://www.carisma.slowglass.com/~tgr/libnl/
-	regex = "Version (__VER__) has been released"
-	version = %{version}
-}
 
 %description
 libnl is a library for applications dealing with netlink sockets.
