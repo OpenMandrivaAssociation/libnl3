@@ -1,6 +1,6 @@
-%define	api 3
-%define	major 200
-%define	libname %mklibname nl %{api} %{major}
+%define api 3
+%define major 200
+%define libname %mklibname nl %{api} %{major}
 %define libcli %mklibname nl-cli %{api} %{major}
 %define libgenl %mklibname nl-genl %{api} %{major}
 %define libnf %mklibname nl-nf %{api} %{major}
@@ -12,7 +12,7 @@
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
 Version:	3.4.0
-Release:	2
+Release:	3
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://github.com/thom311/libnl
@@ -28,54 +28,54 @@ libnl is a library for applications dealing with netlink sockets.
 The library provides an interface for raw netlink messaging and
 various netlink family specific interfaces.
 
-%package -n	libnl3-tools
+%package -n libnl3-tools
 Summary:	Applications dealing with netlink sockets
 Group:		System/Kernel and hardware
 Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	libnl3-tools
+%description -n libnl3-tools
 libnl is a library for applications dealing with netlink sockets.
 The library provides an interface for raw netlink messaging and
 various netlink family specific interfaces.
 
-%package -n	%{libname}
+%package -n %{libname}
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Obsoletes:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	%{libname}
+%description -n %{libname}
 This package contains a shared library for %{name}.
 
-%package -n	%{libcli}
+%package -n %{libcli}
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	%{libcli}
+%description -n %{libcli}
 This package contains a shared library for %{name}.
 
-%package -n	%{libgenl}
+%package -n %{libgenl}
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	%{libgenl}
+%description -n %{libgenl}
 This package contains a shared library for %{name}.
 
-%package -n	%{libnf}
+%package -n %{libnf}
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	%{libnf}
+%description -n %{libnf}
 This package contains a shared library for %{name}.
 
-%package -n	%{libroute}
+%package -n %{libroute}
 Summary:	Library for applications dealing with netlink sockets
 Group:		System/Libraries
 Conflicts:	%{_lib}nl_3 < 3.2.22-2
 
-%description -n	%{libroute}
+%description -n %{libroute}
 This package contains a shared library for %{name}.
 
 %package -n %{libidiag}
@@ -90,7 +90,7 @@ Summary:	Shared library for %{name}
 %description -n %{libxfrm}
 Netlink Inet Diag Family Library.
 
-%package -n	%{devname}
+%package -n %{devname}
 Summary:	Header files of libnl
 Group:		Development/C
 Requires:	%{libname} = %{version}
@@ -100,22 +100,22 @@ Requires:	%{libnf} = %{version}-%{release}
 Requires:	%{libroute} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
-%description -n	%{devname}
+%description -n %{devname}
 libnl is a library for applications dealing with netlink sockets.
 The library provides an interface for raw netlink messaging and
 various netlink family specific interfaces.
 
 %prep
-%setup -qn libnl-%{version}
+%autosetup -n libnl-%{version} -p1
 autoreconf -fi
 
 %build
 %configure \
 	--disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n libnl3-tools
 %dir %{_sysconfdir}/libnl
@@ -204,4 +204,3 @@ autoreconf -fi
 %{_libdir}/pkgconfig/libnl-route-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-idiag-%{api}.0.pc
 %{_libdir}/pkgconfig/libnl-xfrm-%{api}.0.pc
-
