@@ -11,12 +11,12 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.4.0
-Release:	3
+Version:	3.5.0
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://github.com/thom311/libnl
-Source0:	https://github.com/thom311/libnl/releases/download/libnl3_2_29/libnl-%{version}.tar.gz
+Source0:	https://github.com/thom311/libnl/releases/download/libnl3_5_0/libnl-%{version}.tar.gz
 BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
