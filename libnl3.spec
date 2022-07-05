@@ -11,7 +11,7 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.5.0
+Version:	3.6.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -125,7 +125,7 @@ autoreconf -fi
 %{_bindir}/nf-*
 %{_bindir}/genl-ctrl-list
 %{_bindir}/idiag-socket-details
-%{_mandir}/man8/*
+%doc %{_mandir}/man8/*
 %dir %{_libdir}/libnl
 %dir %{_libdir}/libnl/cli
 %dir %{_libdir}/libnl/cli/qdisc
