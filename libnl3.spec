@@ -1,3 +1,6 @@
+# Various plugins are built as regular libraries
+%define _disable_ld_no_undefined 1
+
 %define api 3
 %define major 200
 %define libname %mklibname nl %{api} %{major}
@@ -11,17 +14,18 @@
 
 Summary:	Library for applications dealing with netlink sockets
 Name:		libnl3
-Version:	3.7.0
-Release:	2
+Version:	3.9.0
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 Url:		https://github.com/thom311/libnl
-Source0:	https://github.com/thom311/libnl/releases/download/libnl3_7_0/libnl-%{version}.tar.gz
+Source0:	https://github.com/thom311/libnl/releases/download/libnl%(echo %{version}|sed -e 's,\.,_,g')/libnl-%{version}.tar.gz
 BuildRequires:	bison
 BuildRequires:	doxygen
 BuildRequires:	flex
 BuildRequires:	graphviz
 BuildRequires:	libtool
+BuildSystem:	autotools
 
 %description
 libnl is a library for applications dealing with netlink sockets.
@@ -104,18 +108,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 libnl is a library for applications dealing with netlink sockets.
 The library provides an interface for raw netlink messaging and
 various netlink family specific interfaces.
-
-%prep
-%autosetup -n libnl-%{version} -p1
-autoreconf -fi
-
-%build
-%configure \
-	--disable-static
-%make_build
-
-%install
-%make_install
 
 %files -n libnl3-tools
 %dir %{_sysconfdir}/libnl
